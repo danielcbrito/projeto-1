@@ -1,61 +1,33 @@
-// Exemplo de JavaScript para interatividade básica
-document.getElementById('form-contato').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Mensagem enviada com sucesso!');
-    // Aqui você pode adicionar a lógica para enviar o formulário
-});
+const toggleTheme = document.getElementById("toggleTheme");
+const rootHtml = document.documentElement;
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+const menuLinks = document.querySelectorAll(".menu-link");
 
-// Seleciona o ícone do menu e a lista de navegação
-const menuIcon = document.getElementById('menu-icon');
-const navList = document.getElementById('nav-list');
+function changeTheme () {
+    const currentTheme = rootHtml.getAttribute("data-theme");
 
-// Adiciona um evento de clique ao ícone do menu
-menuIcon.addEventListener('click', () => {
-    navList.classList.toggle('active'); // Alterna a classe "active" na lista
-});
+    currentTheme === "dark" ? rootHtml.setAttribute("data-theme", "light") : rootHtml.setAttribute("data-theme", "dark");
 
-// Seleciona os botões de filtro e os projetos
-const filtroBtns = document.querySelectorAll('.filtro-btn');
-const projetos = document.querySelectorAll('.projeto');
-
-// Adiciona um evento de clique a cada botão de filtro
-filtroBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove a classe "active" de todos os botões
-        filtroBtns.forEach(b => b.classList.remove('active'));
-        // Adiciona a classe "active" ao botão clicado
-        btn.classList.add('active');
-
-        // Filtra os projetos com base na categoria
-        const categoria = btn.getAttribute('data-categoria');
-        projetos.forEach(projeto => {
-            const projetoCategoria = projeto.getAttribute('data-categoria');
-            if (categoria === 'todos' || projetoCategoria === categoria) {
-                projeto.style.display = 'block'; // Exibe o projeto
-            } else {
-                projeto.style.display = 'none'; // Oculta o projeto
-            }
-        });
-    });
-});
-
-
-
-let currentIndex = 0;
-
-function moverCarrossel(direction) {
-    const carrossel = document.querySelector('.carrossel');
-    const projetos = document.querySelectorAll('.projeto');
-    const totalProjetos = projetos.length;
-
-    currentIndex += direction;
-
-    if (currentIndex < 0) {
-        currentIndex = totalProjetos - 1;
-    } else if (currentIndex >= totalProjetos) {
-        currentIndex = 0;
-    }
-
-    const offset = -currentIndex * 100;
-    carrossel.style.transform = `translateX(${offset}%)`;
+    toggleTheme.classList.toggle("bi-sun");
+    toggleTheme.classList.toggle("bi-moon-stars");
 }
+
+toggleTheme.addEventListener("click", changeTheme);
+// fim função mudar Tema do site
+
+accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+        const accordionItem = header.parentElement;
+        const accordionActive = accordionItem.classList.contains("active");
+
+        accordionActive ? accordionItem.classList.remove("active") : accordionItem.classList.add("active");
+        
+    })
+})
+
+menuLinks.forEach(item => {
+    item.addEventListener("click", () => {
+        menuLinks.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+    })
+})
