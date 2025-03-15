@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Brito | Portfólio</title>
+    <title>Gustavo Feriani | Portfólio</title>
 
     <link rel="stylesheet" href="css/style.css">
 
     <!-- BootStrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -21,7 +25,7 @@
             <ul class="menu menu-principal"> <!-- lista nao ordenada -->
                 <li class="menu-item">
                     <a href="#home" class="menu-link active">
-                        <span class="menu-texto"> home </span>
+                        <span class="menu-texto"> Home </span>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -45,16 +49,18 @@
         <!-- logo -->
         <div class="header-logo">
             <a href="#home">
-
-                <img src="" alt="letras D e B" class="logo">
-
+                <img src="logo/logoB.png" alt="" class="logo">
             </a>
         </div>
 
         <!-- trocar cor tema -->
         <div class="header-toggle">
             <i id="toggleTheme" class="bi bi-sun"></i>
+            <!-- aria-label="Alternar tema" -->
+            <!-- Isso ajuda usuários com leitores de tela a entenderem a funcionalidade do botão. -->
         </div>
+
+
 
     </header>
     <!-- FIM MENU DESKTOP -->
@@ -104,22 +110,19 @@
     <main id="home">
         <div class="main-content">
 
-            <h1>
-                <b> Soluções Digitais & </b>
+            <h1> <b> Soluções Digitais & </b>
                 Desenvolvimento Front-End.
 
                 <p>
-                    Daniel Brito - SP, Web Designer
+                    Gustavo Feriani - SP, Desenvolvedor e Instrutor Front-End.
                 </p>
             </h1> <!-- slogan -->
-
-            <b class="frase">A cada clique, uma nova história</b>
 
             <!-- Redes Sociais -->
             <ul class="menu menu-social">
 
                 <li>
-                    <a href="https://github.com/danielcbrito" class="" target="_blank">
+                    <a href="https://github.com/guuhferiani" class="" target="_blank">
                         <i class="menu-icone bi bi-github"> </i>
                     </a>
                 </li>
@@ -168,66 +171,378 @@
     </main>
 
     <section id="projetos" class="projetos">
-        <h2>projetos</h2>
+        <h2>Projetos</h2>
 
         <div class="projeto-container">
 
             <div class="projeto-card">
 
-                <img src="img projetos/unnamed.png" alt="" class="card-img">
+                <img src="projetos/games-store.jpg" alt="" class="card-img">
 
                 <div class="card-body">
 
-                    <h3>Gestão de midia socias </h3>
-                    <p class="card-description">
-                        Gestão de midia socias
-
-                    </p>
+                    <h3 class="card-title"> Games Store </h3>
+                    <p class="card-description"> Venda de Games Digitais </p>
 
                     <ul class="card-lista">
                         <li class="card-item">
                             <i class="icone-seta bi bi-chevron-double-right"></i>
-                            jogos ps5
+                            Jogos Ps5
                         </li>
-
-                        <ul class="card-lista">
-                            <li class="card-item">
-                                <i class="icone-seta bi bi-chevron-double-right"></i>
-                                jogos ps5
-                            </li>
-
-                            <ul class="card-lista">
-                                <li class="card-item">
-                                    <i class="icone-seta bi bi-chevron-double-right"></i>
-                                    jogos ps5
-                                </li>
-
-                            </ul>
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Jogos PC
+                        </li>
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Jogos Nintendo
+                        </li>
+                    </ul>
 
                 </div>
+
+            </div> <!-- fim card 1 -->
+
+
+            <div class="projeto-card card-reverse">
+
+                <img src="projetos/josisbox.jpg" alt="" class="card-img">
+
+                <div class="card-body">
+
+                    <h3 class="card-title"> Josi's Box </h3>
+                    <p class="card-description"> Venda de Livros </p>
+
+                    <ul class="card-lista">
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Literatura
+                        </li>
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            História
+                        </li>
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Tecnologia
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div> <!-- fim card 2 -->
+
+            <div class="projeto-card">
+
+                <img src="projetos/portfolio.PNG" alt="" class="card-img">
+
+                <div class="card-body">
+
+                    <h3 class="card-title"> Feriani </h3>
+                    <p class="card-description"> Portfolio Digital </p>
+
+                    <ul class="card-lista">
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Projetos
+                        </li>
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Tecnologias
+                        </li>
+                        <li class="card-item">
+                            <i class="icone-seta bi bi-chevron-double-right"></i>
+                            Clientes
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div> <!-- fim card 3 -->
+
+        </div>
+
+        <!-- Fim Projetos -->
+
+        <h2>Galeria</h2>
+
+        <div class="carousel">
+
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+
+            <div class="slides">
+                <div class="slide"><img src="projetos/slide1.PNG" alt="Imagem 1"></div>
+                <div class="slide"><img src="projetos/slide2.PNG" alt="Imagem 2"></div>
+                <div class="slide"><img src="projetos/slide3.PNG" alt="Imagem 3"></div>
+            </div>
+
+            <div class="navigation">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
             </div>
         </div>
 
+    </section>
+
+
+
+    <section id="sobre" class="sobre">
+
+        <div class="sobre-content1">
+
+            <img src="img/avatar.jpg" class="sobre-perfil" alt="">
+
+            <div class="sobre-descricao">
+
+                <h2>Sobre Mim</h2>
+                <p>
+                    Sou empresário, vendedor, negociador e web designer, sempre em busca de aprimorar minhas habilidades e oferecer soluções inovadoras. Este projeto foi desenvolvido durante o curso no SENAI, refletindo meu compromisso com a qualidade e excelência no que faço.
+                </p>
+
+                <div class="sobre-skills">
+
+                    <i class="bi bi-translate"></i>
+                    <span> Inglês: Intermediário </span>
+
+                </div>
+
+                <div class="descricao-button">
+
+                    <a href="https://www.linkedin.com/in/gustavo-feriani/" target="_blank">
+
+                        <button class="btn btn-primary">
+
+                            <span> Conecte-se Comigo </span>
+                            <i class="bi bi-arrow-up-right"> </i>
+
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Fim Content 1 -->
+
+        <div class="sobre-content2">
+
+            <div class="col1">
+
+                <div class="row1">
+
+                    <h3>Formação</h3>
+
+                    <h4> IA e Machine Learning </h4><!-- Curso -->
+                    <span>Fev 2024 - 2025</span>
+
+                    <div class="sobre-icones">
+                        <i class="bi bi-bank"></i>
+                        <span>Cruzeiro do Sul</span>
+                    </div>
+
+                    <div class="sobre-icones">
+                        <i class="bi bi-mortarboard"></i>
+                        <span>Pós Gradução</span>
+                    </div>
+                    <!-- nova formação -->
+
+                    <h4> Sistemas para Internet </h4><!-- Curso -->
+                    <span>2020 - 2022</span>
+
+                    <div class="sobre-icones">
+                        <i class="bi bi-bank"></i>
+                        <span>FAM</span>
+                    </div>
+
+                    <div class="sobre-icones">
+                        <i class="bi bi-patch-check"></i>
+                        <span>Técnologo</span>
+                    </div>
+
+                    <!-- nova formação -->
+                    <h4> Multimidia </h4><!-- Curso -->
+                    <span>2012-2014</span>
+
+                    <div class="sobre-icones">
+                        <i class="bi bi-bank"></i>
+                        <span>Senac</span>
+                    </div>
+
+                    <div class="sobre-icones">
+                        <i class="bi bi-award"></i>
+                        <span>Técnico</span>
+                    </div>
+
+                </div> <!-- fim Row 1 -->
+
+
+                <div class="row2">
+
+                    <h3>Experiências</h3>
+
+                    <h4>Instrutor</h4>
+                    <span> Senai. Fev 2012 - Atualmente</span>
+                    <span>Instrutor de Treinamentos e Cursos.</span>
+
+                    <ul class="sobre-lista">
+                        <li class="sobre-item"> Aulas Presenciais </li>
+                        <li class="sobre-item"> Aulas EAD </li>
+                    </ul>
+
+                </div>
+
+            </div> <!-- Fim Coluna 1 -->
+
+            <div class="col2">
+
+                <h3>Cursos</h3>
+
+                <div class="accordion">
+
+                    <div class="accordion-item active">
+
+                        <button class="accordion-header start">
+                            <span> Desenvolvimento Front Angular </span>
+                            <i class="bi bi-caret-down-fill"> </i>
+                        </button>
+
+                        <div class="accordion-body">
+                            <p>Dio. 68 Horas</p>
+                            <p>Desenvolvimento Front End com Angular e desenvolver habilidades práticas para construir
+                                aplicações web modernas e responsivas, enquanto treina recursos de Inteligência
+                                Artificial para se tornar um desenvolvedor completo.</p>
+                        </div>
+
+                    </div> <!-- Fim Curso 1 -->
+
+                    <!-- Curso 2 -->
+                    <div class="accordion-item">
+
+                        <button class="accordion-header">
+                            <span>Google Cloud Engineer</span>
+                            <i class="bi bi-caret-down-fill"> </i>
+                        </button>
+
+                        <div class="accordion-body">
+                            <p>Senai. 40 Horas</p>
+                            <p>Com a certificação Associate Cloud Engineer, é possível implantar aplicativos, monitorar
+                                operações e gerenciar soluções corporativas. Também é possível usar o Console do Google
+                                Cloud e a interface de linha de comando na realização de tarefas comuns baseadas na
+                                plataforma para a manutenção de uma ou mais soluções implantadas que usam os serviços
+                                gerenciados pelo Google ou autogerenciados no Google Cloud.</p>
+                        </div>
+
+
+                    </div> <!-- Fim Curso 2 -->
+
+
+                    <!-- Curso 3 -->
+                    <div class="accordion-item">
+
+                        <button class="accordion-header end">
+                            <span>Google Cloud Computing Foundations</span>
+                            <i class="bi bi-caret-down-fill"> </i>
+                        </button>
+
+                        <div class="accordion-body end">
+                            <p>Senai. 40 Horas</p>
+                            <p>Este curso fornece uma visão geral da computação em nuvem, maneiras de usar o Google
+                                Cloud e diferentes opções de computação.</p>
+                        </div>
+
+                    </div> <!-- Fim Curso 3 -->
+
+                </div> <!-- Fim Accordion -->
+
+            </div>
+
+        </div>
 
     </section>
-    <section>
-
-    </section id="sobre" class="sobre">
-    <h2>sobre</h2>
 
 
     <section id="contato" class="contato">
-        <h2>contato</h2>
+        <h2>Contato</h2>
+
+        <p>
+            Estou disponível para orientações e novas conexões.
+            Contate-me via e-mail e conecte-se comigo através das minhas redes sociais.
+        </p>
+
+        <ul class="menu menu-social">
+            <li>
+                <a href="#" class="menu-link" target="_blank">
+                    <i class="menu-icone bi bi-github"> </i>
+                    <span>GitHub</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="menu-link" target="_blank">
+                    <i class="menu-icone bi bi-linkedin"></i>
+                    <span>Linkedin</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-link" target="_blank">
+                    <i class="menu-icone bi bi-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/+55119" class="menu-link" target="_blank">
+                    <i class="menu-icone bi bi-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <a href="mailto:gustavo.feriani@sp.senai.br">
+            <button class="btn btn-primary">
+                <i class="menu-icone bi bi-envelope-fill"></i>
+                <span class="email">gustavo.feriani@sp.senai.br</span>
+            </button>
+        </a>
+
+
+        <p>Entre em contato preenchendo o formulário abaixo.</p>
+
+        <form action="https://formspree.io/f/mwplerbe" method="POST" class="form-contato">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" required></textarea>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
 
     </section>
 
 
+    <footer>
+        <p>
+            &copy; 2025. Portfolio desenvolvido para fins Educativos com base nas aulas no
+            <a href="https://sp.senai.br/unidade/leopoldina/" target="_blank">
 
+                Senai Leopoldina - SP</a>.
+            Desenvolvido por <a href="https://github.com/guuhferiani" target="_blank">
+                <i class="bi bi-github"></i>
+                Daniel Brito </a>
+        </p>
+    </footer>
 
 
     <script src="js/script.js"> </script>
 
 </body>
-
 
 </html>

@@ -1,84 +1,61 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Menu Hamburguer
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.getElementById('nav-links');
+const toggleTheme = document.getElementById("toggleTheme");
+const rootHtml = document.documentElement;
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+const menuLinks = document.querySelectorAll(".menu-link");
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    }
+function changeTheme () {
+    const currentTheme = rootHtml.getAttribute("data-theme");
 
-    // Fechar menu ao clicar nos itens de navegação
-    const navItems = document.querySelectorAll('.nav-links li a');
-    if (navItems) {
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (navLinks) {
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-    }
+    currentTheme === "dark" ? rootHtml.setAttribute("data-theme", "light") : rootHtml.setAttribute("data-theme", "dark");
 
-    // Interação com Depoimentos
-    const depoimentos = document.querySelectorAll('.depoimento');
-    if (depoimentos) {
-        depoimentos.forEach(depoimento => {
-            depoimento.addEventListener('mouseover', () => {
-                depoimento.style.transform = 'translateY(-10px)';
-                depoimento.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.3)';
-            });
-
-            depoimento.addEventListener('mouseout', () => {
-                depoimento.style.transform = 'translateY(0)';
-                depoimento.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
-            });
-        });
-    }
-});
-
-// Função para solicitar orçamento
-function solicitarOrcamento() {
-    alert("Obrigado pelo seu interesse! Por favor, entre em contato pelo email: contato@empresario.com");
+    toggleTheme.classList.toggle("bi-sun");
+    toggleTheme.classList.toggle("bi-moon-stars");
 }
 
-// Carrossel (se necessário)
-let currentIndexCarrossel = 0;
+toggleTheme.addEventListener("click", changeTheme);
+// fim função mudar Tema do site
 
-function moverCarrossel(direction) {
-    const carrossel = document.querySelector('.carrossel');
-    const projetos = document.querySelectorAll('.projeto');
+accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+        const accordionItem = header.parentElement;
+        const accordionActive = accordionItem.classList.contains("active");
 
-    if (carrossel && projetos) {
-        const totalProjetos = projetos.length;
-        currentIndexCarrossel = (currentIndexCarrossel + direction + totalProjetos) % totalProjetos;
-        const offset = -currentIndexCarrossel * 100;
-        carrossel.style.transform = `translateX(${offset}%)`;
-    }
-}
+        accordionActive ? accordionItem.classList.remove("active") : accordionItem.classList.add("active");
+        
+    })
+})
 
-// Função toggleMenu (se necessário)
-function toggleMenu() {
-    const navLinks = document.getElementById('nav-links');
-    if (navLinks) {
-        navLinks.classList.toggle('active');
-    }
-}
+menuLinks.forEach(item => {
+    item.addEventListener("click", () => {
+        menuLinks.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+    })
+})
 
-// Script opcional para animação de hover ou interatividade
-document.addEventListener('DOMContentLoaded', function() {
-    const projetos = document.querySelectorAll('.projeto');
 
-    projetos.forEach(function(projeto) {
-        projeto.addEventListener('mouseover', function() {
-            projeto.style.transform = 'translateY(-10px)';
-            projeto.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.3)';
+// Envio do formulário com limpeza dos campos
+const form = document.querySelector(".form-contato");
+
+form.addEventListener("submit", async function (event) {
+    event.preventDefault(); // Impede a atualização da página
+
+    const formData = new FormData(form);
+    const action = form.getAttribute("action");
+
+    try {
+        let response = await fetch(action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
         });
 
-        projeto.addEventListener('mouseout', function() {
-            projeto.style.transform = 'translateY(0)';
-            projeto.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
-        });
-    });
+        if (response.ok) {
+            alert("Mensagem enviada com sucesso!");
+            form.reset(); // Limpa os campos do formulário
+        } else {
+            alert("Erro ao enviar mensagem. Tente novamente.");
+        }
+    } catch (error) {
+        alert("Erro de conexão. Verifique sua internet.");
+    }
 });
